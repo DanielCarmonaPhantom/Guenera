@@ -1,10 +1,15 @@
-<aside id="sidebar" class="sidebar">
+<aside id="sidebar" class="sidebar mt-3">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      {% include 'componets/sidebar/worktable.html' %}
+
+      {% for worktable in worktables %}
+        {% include 'componets/sidebar/worktable.html' %}
+      {% endfor %}
+
+      {% include 'componets/sidebar/worktable-blank.html' %}
+      
 
 
     </ul>
-
   </aside>

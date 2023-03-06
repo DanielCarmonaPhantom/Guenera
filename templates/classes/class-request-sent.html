@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% include 'componets/navbar-login.html' %}
+{% include 'componets/sidebar/sidebar.html' %}
+
+
+<!-- <section id="course-details" class="course-details mt-5">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-8">
+          <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
+          <h3>Et enim incidunt fuga tempora</h3>
+          <p>
+            Qui et explicabo voluptatem et ab qui vero et voluptas. Sint voluptates temporibus quam autem. Atque nostrum voluptatum laudantium a doloremque enim et ut dicta. Nostrum ducimus est iure minima totam doloribus nisi ullam deserunt. Corporis aut officiis sit nihil est. Labore aut sapiente aperiam.
+            Qui voluptas qui vero ipsum ea voluptatem. Omnis et est. Voluptatem officia voluptatem adipisci et iusto provident doloremque consequatur. Quia et porro est. Et qui corrupti laudantium ipsa.
+            Eum quasi saepe aperiam qui delectus quaerat in. Vitae mollitia ipsa quam. Ipsa aut qui numquam eum iste est dolorum. Rem voluptas ut sit ut.
+          </p>
+        </div>
+        <div class="col-lg-4">
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Trainer</h5>
+            <p><a href="#">Walter White</a></p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Course Fee</h5>
+            <p>$165</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Available Seats</h5>
+            <p>30</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Schedule</h5>
+            <p>5.00 pm - 7.00 pm</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section> -->
+
+  <section class="section mt-5">
+    <div class="container">
+
+        <div class="breadcrumbs">
+            <nav>
+              <div class="container">
+                <ol>
+                  <li><a href="{% url 'tableros:url_class_nan' username worktable_slug  %}">{{ clase.WorkTable_id.worktable_name }}</a></li>
+                  <li>{{ clase.class_name }}</li>
+                </ol>
+              </div>
+            </nav>
+          </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+      
+              <div class="card mt">
+                <div class="card-body mt-5">
+
+                  
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <!-- <img src="assets/img/course-details.jpg" class="img-fluid" alt=""> -->
+                      <h3>{{ clase.class_name }}</h3>
+                      <p>
+                        {{ clase.class_description }}
+                      </p>
+                    </div>
+                    <div class="col-lg-4">
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Profesor</h5>
+                        <p>{{ clase.user_id.username}}</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Costo de curso</h5>
+                        <p>$165</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Limite de alumnos</h5>
+                        <p>30</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Horario</h5>
+                        <p>5.00 pm - 7.00 pm</p>
+                      </div>
+            
+                    </div>
+                </div>
+      
+                <h5 class="card-title">Solicitud Enviada</h5>
+          
+      
+                </div>
+              </div>
+      
+            </div>
+      
+      
+          </div>
+    </div>
+  </section>
+
+
+
+
+{% include 'componets/modals/modal-create-worktable.html' %}
+{% include 'componets/modals/modal-url-worktable.html' %}
+
+{% endblock %}

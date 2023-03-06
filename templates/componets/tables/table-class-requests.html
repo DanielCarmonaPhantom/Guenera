@@ -1,0 +1,51 @@
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <h5 class="card-title">Solicitudes de clase </h5>
+
+        {% if count_class_requests > 0 %}
+          <table class="table table-borderless datatable">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Estatus</th>
+                <th scope="col">Aprobar</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for solicitud in class_requests %}
+              <tr>
+                <td>{{ solicitud.student_name }}</td>
+                <td>{{ solicitud.student_username }}</td>
+                <td>{{ solicitud.student_email }}</td>
+
+                {% if solicitud.application_status == 'sent' %}
+                <td><span class="badge bg-success">Enviada</span></td>
+
+                {% else %}
+
+                <td><span class="badge bg-warning">En espera</span></td>
+
+                {% endif %}
+                
+                <!-- <td><button type="button" class="btn btn-primary btn-sm">Aceptar</button> <button type="button" class="btn btn-danger btn-sm ml-3">Denegar</button></td> -->
+                <td><a href="{% url 'tableros:enroll_student' username worktable_slug class_slug solicitud.id %}" type="button" class="btn btn-primary btn-sm">Aceptar</a> <a href="{% url 'tableros:reject_student' username worktable_slug class_slug solicitud.id %}" type="button" class="btn btn-warning btn-sm">Denegar</a></td>
+              </tr>
+              {% endfor %}            
+
+            </tbody>
+          </table>
+        {% else %}
+             <h5>No cuentas aún con solicitudes</h5>
+        {% endif %}
+
+        
+
+      </div>
+
+    </div>
+  </div>

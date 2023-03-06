@@ -1,0 +1,33 @@
+<div class="modal fade" id="modalCreateUrl" tabindex="-1" aria-labelledby="modalCreateUrlLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalCreateUrlLabel">Genera una invitación para tus alumnos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post" role="form">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="url_expiration" class="form-label">Expira después de </label>
+              {{ formGenerateUrl.worktable_invite_url_expiration }}
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-12 col-md-8">
+                <label for="urlGenerated" class="visually-hidden">Enlace para compartir</label>
+                <input type="text" class="form-control" id="urlGenerated" value="http://genera.com/a/{{random_url}}" disabled >
+              </div>
+              <div class="col-12 col-md-4">
+                <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal" id="copyUrl">Copiar</button>
+              </div>
+            </div>
+
+            
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,45 @@
+<div class="col-12">
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <h5 class="card-title">Alumnos Inscritos </h5>
+
+        {% if count_class_enrolled_students > 0 %}
+          <table class="table table-borderless datatable">
+            <thead>
+              <tr>
+
+                <th scope="col">Usuario</th>
+                <th scope="col">Correo</th>
+                <!-- <th scope="col">Estatus</th> -->
+                <!-- <th scope="col">Aprobar</th> -->
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for student in enrolled_students %}
+              <tr>
+
+                <td>{{ student.student_id.username }}</td>
+                <td>{{ student.student_id.email }}</td>
+
+                <!-- {% if student.application_status == 'sent' %}
+                    <td><span class="badge bg-success">Solicitada</span></td>
+                {% endif %} -->
+                
+                <!-- <td><button type="button" class="btn btn-primary btn-sm">Aceptar</button> <button type="button" class="btn btn-danger btn-sm ml-3">Denegar</button></td> -->
+              </tr>
+              {% endfor %}            
+
+            </tbody>
+          </table>
+        {% else %}
+             <h5>No hay alumnos inscritos</h5>
+        {% endif %}
+
+        
+
+      </div>
+
+    </div>
+  </div>

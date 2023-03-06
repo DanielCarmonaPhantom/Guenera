@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% include 'componets/navbar-login.html' %}
+{% include 'componets/sidebar/sidebar.html' %}
+{% include 'componets/sidebar/sidebar-class.html' %}
+
+
+
+<section id="header-work">
+
+    <div class="section-title">
+        <h2>{{ clase.class_name }}</h2>
+    </div>
+</section>
+
+
+
+
+{% include 'componets/modals/modal-create-worktable.html' %}
+{% include 'componets/modals/modal-create-class.html' %}
+{% include 'componets/modals/modal-url-worktable.html' %}
+{% endblock %}

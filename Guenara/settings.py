@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import os 
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,8 +32,7 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     'users',
-    'tableros'
-
+    'tableros', 
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
@@ -71,13 +71,22 @@ WSGI_APPLICATION = 'Guenara.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+pymysql.version_info = (1, 4, 2, 'final', 0)
+
+pymysql.install_as_MySQLdb()
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'GuenaraDB',
+        'USER': 'SA',
+        'PASSWORD': "<YourStrong@Passw0rd>",
+        'HOST': 'localhost',
+
     }
 }
-
+DATABASE_CONNECTION_POOLING = False
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

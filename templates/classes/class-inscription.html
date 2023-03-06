@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% include 'componets/navbar-login.html' %}
+{% include 'componets/sidebar/sidebar.html' %}
+
+
+<!-- <section id="course-details" class="course-details mt-5">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-8">
+          <img src="assets/img/course-details.jpg" class="img-fluid" alt="">
+          <h3>Et enim incidunt fuga tempora</h3>
+          <p>
+            Qui et explicabo voluptatem et ab qui vero et voluptas. Sint voluptates temporibus quam autem. Atque nostrum voluptatum laudantium a doloremque enim et ut dicta. Nostrum ducimus est iure minima totam doloribus nisi ullam deserunt. Corporis aut officiis sit nihil est. Labore aut sapiente aperiam.
+            Qui voluptas qui vero ipsum ea voluptatem. Omnis et est. Voluptatem officia voluptatem adipisci et iusto provident doloremque consequatur. Quia et porro est. Et qui corrupti laudantium ipsa.
+            Eum quasi saepe aperiam qui delectus quaerat in. Vitae mollitia ipsa quam. Ipsa aut qui numquam eum iste est dolorum. Rem voluptas ut sit ut.
+          </p>
+        </div>
+        <div class="col-lg-4">
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Trainer</h5>
+            <p><a href="#">Walter White</a></p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Course Fee</h5>
+            <p>$165</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Available Seats</h5>
+            <p>30</p>
+          </div>
+
+          <div class="course-info d-flex justify-content-between align-items-center">
+            <h5>Schedule</h5>
+            <p>5.00 pm - 7.00 pm</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section> -->
+
+  <section class="section mt-5">
+    <div class="container">
+
+        <div class="breadcrumbs">
+            <nav>
+              <div class="container">
+                <ol>
+                  <li><a href="{% url 'tableros:url_class_nan' username worktable_slug  %}">{{ clase.WorkTable_id.worktable_name }}</a></li>
+                  <li>{{ clase.class_name }}</li>
+                </ol>
+              </div>
+            </nav>
+          </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+      
+              <div class="card mt">
+                <div class="card-body mt-5">
+
+                  
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <!-- <img src="assets/img/course-details.jpg" class="img-fluid" alt=""> -->
+                      <h3>{{ clase.class_name }}</h3>
+                      <p>
+                        {{ clase.class_description }}
+                      </p>
+                    </div>
+                    <div class="col-lg-4">
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Profesor</h5>
+                        <p>{{ clase.user_id.username}}</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Costo de curso</h5>
+                        <p>$165</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Limite de alumnos</h5>
+                        <p>30</p>
+                      </div>
+            
+                      <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Horario</h5>
+                        <p>5.00 pm - 7.00 pm</p>
+                      </div>
+            
+                    </div>
+                </div>
+      
+                <h5 class="card-title">Información del alumno a inscribir</h5>
+
+                <form class="row g-3 needs-validation" action="" method="post" role="form">
+                    {% csrf_token %}
+
+                    <div class="col-md-4">
+                      <label for="validationInputUsername" class="form-label">Nombre</label>
+                      {{ formInscriptionClass.student_name }}
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationInputName" class="form-label">Usuario</label>
+                      {{ formInscriptionClass.student_username }}
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationCustomEmail" class="form-label">Correo</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        {{ formInscriptionClass.student_email }}
+                        <div class="invalid-feedback">
+                          Por favor ingresa un correo valido
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-6">
+                      <label for="validationCustom03" class="form-label">City</label>
+                      <input type="text" class="form-control" id="validationCustom03" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid city.
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                      <label for="validationCustom04" class="form-label">Horario</label>
+                      <select class="form-select" id="validationCustom04" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>...</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid state.
+                      </div>
+                    </div> -->
+                    <!-- <div class="col-md-3">
+                      <label for="validationCustom05" class="form-label">Zip</label>
+                      <input type="text" class="form-control" id="validationCustom05" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid zip.
+                      </div>
+                    </div> -->
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-right">
+                      
+                    </div>
+                    <div class="col-12 d-flex justify-content-end align-items-end">
+                        
+						<button class="btn btn-primary float-right" type="submit">Enviar solicitud</button>
+					</div>
+                  </form>
+                  <!-- General Form Elements -->
+                  <!-- <form class="mt-5">
+                    <div class="row mb-3">
+                      <label for="inputText" class="col-sm-2 col-form-label">Text</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputNumber" class="col-sm-2 col-form-label">Number</label>
+                      <div class="col-sm-10">
+                        <input type="number" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" type="file" id="formFile">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+                      <div class="col-sm-10">
+                        <input type="date" class="form-control">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputTime" class="col-sm-2 col-form-label">Time</label>
+                      <div class="col-sm-10">
+                        <input type="time" class="form-control">
+                      </div>
+                    </div>
+      
+                    <div class="row mb-3">
+                      <label for="inputColor" class="col-sm-2 col-form-label">Color Picker</label>
+                      <div class="col-sm-10">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#4154f1" title="Choose your color">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputPassword" class="col-sm-2 col-form-label">Textarea</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" style="height: 100px"></textarea>
+                      </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            First radio
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            Second radio
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios" value="option" disabled>
+                          <label class="form-check-label" for="gridRadios3">
+                            Third disabled radio
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="row mb-3">
+                      <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
+                      <div class="col-sm-10">
+      
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                          <label class="form-check-label" for="gridCheck1">
+                            Example checkbox
+                          </label>
+                        </div>
+      
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck2" checked>
+                          <label class="form-check-label" for="gridCheck2">
+                            Example checkbox 2
+                          </label>
+                        </div>
+      
+                      </div>
+                    </div>
+      
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Disabled</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" value="Read only / Disabled" disabled>
+                      </div>
+                    </div>
+      
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Select</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Multi Select</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" multiple aria-label="multiple select example">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                    </div>
+      
+                    <div class="row mb-3">
+                      <label class="col-sm-2 col-form-label">Submit Button</label>
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Submit Form</button>
+                      </div>
+                    </div>
+      
+                  </form> -->
+                  <!-- End General Form Elements -->
+      
+                </div>
+              </div>
+      
+            </div>
+      
+      
+          </div>
+    </div>
+  </section>
+
+
+
+
+{% include 'componets/modals/modal-create-worktable.html' %}
+{% include 'componets/modals/modal-url-worktable.html' %}
+
+{% endblock %}

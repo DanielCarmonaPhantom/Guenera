@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class RegisterForm(forms.Form):
-    username = forms.CharField(label="Usuario", required = True, min_length=4, max_length=50, widget=forms.TextInput(attrs={
+    username = forms.CharField(label="Nombre de usuario", required = True, min_length=4, max_length=50, widget=forms.TextInput(attrs={
         'class': 'form-control',
         'id': 'username',
         'placeholder': 'Usuario'
@@ -16,6 +16,7 @@ class RegisterForm(forms.Form):
         'id': 'email',
         'placeholder': 'example@exmaple.org'
         }))
+    
     password = forms.CharField(label="Contraseña",required = True, widget=forms.PasswordInput(attrs={
         'class': 'form-control',
         'id': 'password',
@@ -33,6 +34,14 @@ class RegisterForm(forms.Form):
 
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError('El usuario ya se encuentra en uso')
+        
+        if username.isspace():
+            raise forms.ValidationError("El usuario no puede contener espacios")
+
+        if not username.isalnum():
+            raise forms.ValidationError('El usuario no puede contener espacios o caracteres')
+        
+        
         return username
     
     def clean_email(self):

@@ -1,9 +1,22 @@
 <div class="modal fade modal-worktable" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="createModalLabel">Crear un espacio de trabajo</h1>
+        <!-- <div class="modal-header">
+          <h1 class="modal-title fs-5" id="createModalLabel">Crear o unirte a un espacio de trabajo</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body">
+          
+          <div class="d-grid gap-2 text-center">
+            <h4>¿Ya cuentas con una invitación?</h4>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#joinWorkTable">
+              Únete a un tablero con el link de invitación
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="text-center">
+          <h4>Crea un espacio de trabajo</h4>
         </div>
         <form action="" method="post" role="form">
             {% csrf_token %}
@@ -11,20 +24,22 @@
                 <div class="mb-3 text-center">
                     <label for="exampleInputImage" class="form-label"><i class="bi bi-image"></i></label>
                     <!-- <input type="file" class="form-control" id="exampleInputImage" aria-describedby="imageHelp" name="image"> -->
-                    
                     <div id="imageHelp" class="form-text">Puedes cambiar la imagen despues</div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label">Nombre del espacio de trabajo</label>
                     <!-- <input type="text" class="form-control" id="exampleInputName" name="nameWorkflow"> -->
-                    {{ form.worktable_name }}
+                    {{ formWorkTable.worktable_name }}
                   </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn">Crear espacio de trabajo</button>
               </div>
         </form>
+
+
+        
       </div>
     </div>
   </div>

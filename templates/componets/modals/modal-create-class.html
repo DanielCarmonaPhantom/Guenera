@@ -1,0 +1,28 @@
+<div class="modal modal-dialog modal-lg fade modal-class" id="exampleModalClass" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="createModalLabel">Crear un espacio de trabajo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" method="post" role="form">
+          {% csrf_token %}
+          <div class="modal-body">
+              <div class="mb-3 ">
+                  <label for="exampleInputImage" class="form-label">Crear una clase</label>
+                  {{ formClass.class_name }}
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputName" class="form-label">Descripción de la clase</label>
+                  {{ formClass.class_description }}
+                </div>
+            </div>
+            <div class="modal-footer">
+              <div id="imageHelp" class="form-text">Puedes cambiar la imagen despues</div>
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn">Crear clase</button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>

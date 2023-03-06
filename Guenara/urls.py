@@ -13,7 +13,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.login_view, name='login'),
     path('registro/', views.register_view, name='register'),
+    path('logout/', views.logout_view, name='logout'), 
     path('tableros/', include('tableros.urls'), name='tableros'),
+    path('a/<slug:worktable_invite_url>', views.invite, name='invite'), 
 ]
 
 

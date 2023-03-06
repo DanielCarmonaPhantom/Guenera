@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% include 'componets/sidebar/sidebar.html' %}
+{% include 'componets/navbar-login.html' %}
+
+<section id="portfolio" class="portfolio sections-bg mt-5">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Clases</h2>
+        </div>
+
+        <div class="portfolio-isotope mt-5" data-portfolio-filter="*" data-portfolio-layout="masonry"
+            data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4 portfolio-container">
+
+                {% for clase in clases%}
+                    {% include 'componets/class/class.html' %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% include 'componets/modals/modal-create-worktable.html' %}
+{% include 'componets/modals/modal-url-worktable.html' %}
+
+{% endblock %}
