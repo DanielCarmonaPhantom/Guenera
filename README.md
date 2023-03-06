@@ -2,13 +2,33 @@
 
 Plataforma que te permite anunciar y gestionar tus clases que impartes de manera que puedas tener una gestión y alcance con tu público. 
 
+## Construido con 🛠️
+
+_Menciona las herramientas que utilizaste para crear tu proyecto_
+
+* Django
+* MYSQL
+* JS
+* Quill
+
+## Table of Contents
+- [Pre-requisitos](#pre-requisitos)
+- [Autor](#autor)
+<!-- - [Table of Contents](#table-of-contents)
+  - [General Info](#general-info)
+- [Construido con 🛠️](#construido-con-️)
+- [Autores ✒️](#autores-️)
+  - [Screenshot](#screenshot)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Collaboration](#collaboration)
+- [FAQs](#faqs) -->
 
 
 
 
+<h3 id="pre-requisitos">Pre-requisitos 📋 </h3> 
 
-
-### Pre-requisitos 📋
 
 Librerías utilizadas
 
@@ -37,18 +57,19 @@ Estas se tienen en un documento llamado `requirements.txt`
 
 
 
-## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* Django
-* MYSQL
-* JS
-* Quill
 
 
+<h3 id="instalacion">Instalación</h3>
 
-## Autores ✒️
+```
+$ git clone https://github.com/DanielCarmonaPhantom/Guenera.git
+$ cd Guenara
+$ pip3 install python3 -m venv env
+$ source tutorial-env/bin/activate
+$ (env) pip3 install requirements.txt
+```
+
+<h3 id="autor">Autor</h3>
 
 
 
