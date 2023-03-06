@@ -13,7 +13,9 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Table of Contents
 - [Pre-requisitos](#pre-requisitos)
+- [Instalación](#instalacion)
 - [Autor](#autor)
+
 <!-- - [Table of Contents](#table-of-contents)
   - [General Info](#general-info)
 - [Construido con 🛠️](#construido-con-️)
@@ -65,7 +67,7 @@ Estas se tienen en un documento llamado `requirements.txt`
 $ git clone https://github.com/DanielCarmonaPhantom/Guenera.git
 $ cd Guenara
 $ pip3 install python3 -m venv env
-$ source tutorial-env/bin/activate
+$ source env/bin/activate
 $ (env) pip3 install requirements.txt
 ```
 
@@ -73,5 +75,5 @@ $ (env) pip3 install requirements.txt
 
 
 
-* **Daniel Carmona**  - [DanielCarmonaPhantom](https://github.com/DanielCarmonaPhantom)
+* **Daniel Carmona**  - [GitHub Profile](https://github.com/DanielCarmonaPhantom)
 
